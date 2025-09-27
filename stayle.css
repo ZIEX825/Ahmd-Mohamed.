@@ -96,6 +96,12 @@ body {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 
 /*hero section*/
 
@@ -112,6 +118,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .hero-content {
@@ -188,8 +195,27 @@ h2 {
     margin-bottom: 50px;
 }
 
+.btn:hover {
+    color: var(--text-light);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6), 0 0 80px rgba(255, 0, 0, 0.4), 0 0 120px rgba(255, 0, 0, 0.2);
+    transform: scale(1.05);
+}
 
-/*profiel pic*/
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
 
 .profile-container {
     position: relative;
@@ -425,4 +451,330 @@ ul.skills-list li button {
     font-size: 1.3em;
     padding: 0 12px 0 0;
     color: var(--neon-red);
+}
+
+.about h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 100px;
+    color: var(--neon-red);
+}
+
+.about {
+    width: 1500px;
+    text-align: center;
+    font-weight: 500;
+    margin: 60px auto;
+    font-size: 1.5em;
+    padding: 30px;
+    background-color: rgba(8, 8, 8, 0.63);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--neon-pink);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    margin: 5px;
+}
+
+.skill {
+    width: 500px;
+    margin: 400px auto;
+    color: #fff;
+    padding: 20px;
+    border: 2px solid var(--neon-red);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--neon-red);
+    background: rgba(32, 32, 32, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.skill li {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.bar {
+    background: rgba(32, 32, 32, 0.1);
+    display: block;
+    height: 20px;
+    border: 1px solid var(--neon-red);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--neon-red);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, .1);
+}
+
+.bar:hover {
+    box-shadow: 0 0 30px var(--neon-pink);
+}
+
+.bar span {
+    height: 20px;
+    float: left;
+    background: linear-gradient(135deg, rgb(236, 0, 140, 1) 0%, rgb(252, 103, 103, 1) 100%);
+}
+
+.html {
+    width: 60%;
+    animation: html 3s;
+}
+
+.CSS {
+    width: 50%;
+    animation: CSS 3s;
+}
+
+.JavaScript {
+    width: 35%;
+    animation: JavaScript 3s;
+}
+
+@keyframes html {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes CSS {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes JavaScript {
+    from {
+        width: 0;
+    }
+    to {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .skill {
+        width: 90%;
+        padding: 15px;
+    }
+    .bar {
+        height: 15px;
+    }
+    .bar span {
+        height: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+    .title {
+        font-size: 28px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .Skills {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+        margin-left: 0;
+        flex-direction: column;
+    }
+    .profile-wrapper {
+        width: 240px;
+        height: 240px;
+    }
+    .about {
+        width: 95%;
+        font-size: 1.1em;
+        margin: 30px auto;
+        padding: 20px;
+    }
+    .about h2 {
+        font-size: 1.5em;
+        margin-bottom: 50px;
+    }
+    .section {
+        flex-direction: column;
+    }
+    .skills-container {
+        width: 100%;
+        padding: 15px;
+    }
+    .skill {
+        width: 95%;
+        margin: 60px auto;
+    }
+    .bar {
+        height: 14px;
+    }
+    .bar span {
+        height: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-text {
+        margin-bottom: 60px;
+    }
+    .btn-group {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .profile-wrapper {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+    }
+    .Skills {
+        width: 90%;
+        margin-left: 0;
+        padding: 40px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about {
+        width: 90%;
+        margin: 40px auto;
+        font-size: 1.2em;
+        padding: 20px;
+    }
+    .skills-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    .profile-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 14px 30px;
+    }
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .skill {
+        width: 90%;
+        margin: 60px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .profile-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+    .about {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    .title {
+        font-size: 26px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+    .profile-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    .Skills {
+        padding: 30px 10px;
+    }
+    .skill {
+        padding: 15px;
+    }
+    .bar {
+        height: 12px;
+    }
+    .bar span {
+        height: 12px;
+    }
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
 }
